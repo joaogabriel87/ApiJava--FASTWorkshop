@@ -1,0 +1,125 @@
+### ===========================================
+### 🔹 COLABORADORES
+### ===========================================
+
+### Criar colaborador
+POST http://localhost:8080/api/colaboradores
+Content-Type: application/json
+
+{
+  "nome": "João Gabriel"
+}
+
+###
+
+POST http://localhost:8080/api/colaboradores
+Content-Type: application/json
+
+{
+  "nome": "Maria Clara"
+}
+
+###
+
+POST http://localhost:8080/api/colaboradores
+Content-Type: application/json
+
+{
+  "nome": "Lucas Oliveira"
+}
+
+###
+
+### Listar colaboradores
+GET http://localhost:8080/api/colaboradores
+Accept: application/json
+
+
+
+### ===========================================
+### 🔹 WORKSHOPS
+### ===========================================
+
+### Criar workshop
+POST http://localhost:8080/api/workshops
+Content-Type: application/json
+
+{
+  "nome": "Spring Boot Avançado",
+  "descricao": "Workshop completo de backend com Spring Boot",
+  "dataRealizacao": "2025-11-05"
+}
+
+###
+
+POST http://localhost:8080/api/workshops
+Content-Type: application/json
+
+{
+  "nome": "APIs RESTful com Java",
+  "descricao": "Desenvolvimento de APIs REST com padrões modernos",
+  "dataRealizacao": "2025-11-10"
+}
+
+###
+
+### Listar workshops
+GET http://localhost:8080/api/workshops
+Accept: application/json
+
+###
+
+### Buscar workshop por nome
+GET http://localhost:8080/api/workshops/search?nome=Spring
+Accept: application/json
+
+###
+
+### Buscar workshop por data
+GET http://localhost:8080/api/workshops/data?data=2025-11-10
+Accept: application/json
+
+
+
+### ===========================================
+### 🔹 ATAS DE PRESENÇA
+### ===========================================
+
+### Criar ata de presença
+POST http://localhost:8080/api/atas
+Content-Type: application/json
+
+{
+  "workshopId": 2,
+  "colaboradoresIds": [1, 2]
+}
+
+###
+
+### Adicionar colaborador a uma ata
+PUT http://localhost:8080/api/atas/workshops/2/atas/1?colaboradorId=3
+Accept: application/json
+
+###
+
+### Remover colaborador de uma ata
+DELETE http://localhost:8080/api/atas/1/colaboradores/3
+Accept: application/json
+
+###
+
+### Listar todas as atas (colaboradores + workshops)
+GET http://localhost:8080/api/atas
+Accept: application/json
+
+###
+
+### Filtrar atas por nome do workshop
+GET http://localhost:8080/api/atas?workshopNome=Spring
+Accept: application/json
+
+###
+
+### Filtrar atas por data
+GET http://localhost:8080/api/atas?data=2025-11-05
+Accept: application/json
