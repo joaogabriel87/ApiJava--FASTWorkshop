@@ -13,13 +13,6 @@ public class WorkshopMapper {
     private ColaboradorMapper colaboradorMapper;
 
 
-    public WorkshopDto toDTO(WorkshopEntity entity) {
-        if (entity == null) return null;
-
-        return new WorkshopDto(
-                entity.getNome(), entity.getDataRealizacao(), entity.getDescricao(), entity.getColaboradores().stream().map(x -> x.getNome()).collect(Collectors.toList())
-        );
-    }
 
     public WorkshopEntity toEntity(WorkshopDto dto) {
         if (dto == null) return null;

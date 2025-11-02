@@ -19,7 +19,7 @@ public class ColaboradorController {
 
 
     @PostMapping
-    public ResponseEntity<ResponseColaborador> criar(@RequestBody @Valid ColaboradorDto dto) {
+    public ResponseEntity<ResponseColaborador> criarColaborador(@RequestBody @Valid ColaboradorDto dto) {
         ColaboradorEntity colaborador = colaboradorServices.criar(dto);
         ResponseColaborador response =  colaboradorMapper.toResponse(colaborador);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

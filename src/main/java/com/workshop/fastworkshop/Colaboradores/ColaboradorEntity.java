@@ -17,7 +17,9 @@ public class ColaboradorEntity {
     @Column(nullable = false)
     private String nome;
 
-    public  ColaboradorEntity(String nome ) {
+    public ColaboradorEntity(){
+    }
+    public ColaboradorEntity(String nome ) {
         this.nome = nome;
     }
 }

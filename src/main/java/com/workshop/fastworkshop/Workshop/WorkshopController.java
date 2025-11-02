@@ -21,9 +21,9 @@ public class WorkshopController {
     private WorkshopMapper workshopMapper;
 
 
-    // POST /api/workshops
+
     @PostMapping
-    public ResponseEntity<ResponseWorkshop> criar(@RequestBody @Valid WorkshopDto dto) throws DataInvalidaException {
+    public ResponseEntity<ResponseWorkshop> criarWorkShop(@RequestBody @Valid WorkshopDto dto) throws DataInvalidaException {
        WorkshopEntity entity = workshopServices.createWorkshop(dto);
        ResponseWorkshop response = workshopMapper.toResponse(entity);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

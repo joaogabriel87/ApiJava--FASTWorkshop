@@ -6,18 +6,6 @@ import java.util.stream.Collectors;
 
 @Component
 public class AtaMapper {
-    public AtaDto toDTO(AtaEntity entity) {
-        if (entity == null) return null;
-        AtaDto dto = new AtaDto(
-                entity.getWorkshop().getId(),
-                entity.getColaboradores().stream()
-                        .map(c -> c.getId())
-                        .collect(Collectors.toList())
-        );
-
-        return dto;
-    }
-
     public ResponseAta toResponse(AtaEntity entity) {
         if (entity == null) return null;
 

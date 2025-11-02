@@ -25,7 +25,7 @@ public class AtaController {
 
 
 
-    // POST /api/atas → cria uma ata
+
     @PostMapping
     public ResponseEntity<ResponseAta> criarAta(@RequestBody @Valid AtaDto dto) {
         AtaEntity entity = ataServices.criarAta(dto);
@@ -33,7 +33,7 @@ public class AtaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    // PUT /api/workshops/{workshopId}/atas/{ataId}?colaboradorId=1
+
     @PutMapping("/workshops/{workshopId}/atas/{ataId}")
     public ResponseEntity<ResponseAta> adicionarColaborador(
             @PathVariable Long workshopId,
@@ -45,7 +45,7 @@ public class AtaController {
         return ResponseEntity.ok(response);
     }
 
-    // DELETE /api/atas/{ataId}/colaboradores/{colaboradorId}
+
     @DeleteMapping("/{ataId}/colaboradores/{colaboradorId}")
     public ResponseEntity<ResponseAta> removerColaborador(
             @PathVariable Long ataId,
@@ -56,7 +56,7 @@ public class AtaController {
         return ResponseEntity.ok(response);
     }
 
-    // GET /api/atas → todos os colaboradores e workshops
+
     @GetMapping
     public ResponseEntity<?> listarAtas(
             @RequestParam(required = false) String workshopNome,
@@ -75,7 +75,6 @@ public class AtaController {
             return ResponseEntity.ok(atas);
         }
 
-        // padrão: retorna todos (colaboradores + workshops)
         List<Map<String, Object>> response = ataServices.listarColaboradoresComWorkshops();
         return ResponseEntity.ok(response);
     }
