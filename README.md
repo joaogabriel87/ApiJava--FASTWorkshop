@@ -61,10 +61,8 @@ http://localhost:8080
 Acesse após rodar o projeto:
 
  **Swagger UI:**  
-[http://localhost:8080/docs](http://localhost:8080/docs)
+http://localhost:8080/swagger-ui/index.html
 
- **OpenAPI JSON:**  
-[http://localhost:8080/api-docs](http://localhost:8080/api-docs)
 
 
 ##  Scripts úteis Maven
